@@ -10,6 +10,20 @@
 <button onclick="convertToBinary()">Convertir</button>
 <p id="binaryResult"></p>
 
-<script src="index.js"></script>
+<script>
+function convertToBinary() {
+    const decimalInput = document.getElementById('decimalInput').value.trim();
+
+    if (!/^\d+$/.test(decimalInput)) {
+        document.getElementById('binaryResult').textContent = '';
+        return;
+    }
+
+    const decimalNumber = parseInt(decimalInput, 10);
+
+    const binaryResult = decimalNumber.toString(2);
+    document.getElementById('binaryResult').textContent = `Représentation binaire : ${binaryResult}`;
+}
+</script>
 </body>
 </html>
